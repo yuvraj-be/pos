@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.nepshop">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name="com.app.nepshop.utils.MultiLanguageApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.app.nepshop.settings.unit.EditUnitActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.nepshop.settings.unit.AddUnitActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.nepshop.settings.unit.UnitActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.nepshop.settings.order_type.EditOrderTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.nepshop.settings.order_type.AddOrderTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.nepshop.settings.order_type.OrderTypeActivity"
+            android:exported="false" />
+        <activity android:name="com.app.nepshop.orders.DeviceListActivity" />
+        <activity android:name="com.app.nepshop.settings.payment_method.EditPaymentMethodActivity" />
+        <activity android:name="com.app.nepshop.settings.payment_method.AddPaymentMethodActivity" />
+        <activity android:name="com.app.nepshop.settings.payment_method.PaymentMethodActivity" />
+        <activity android:name="com.app.nepshop.settings.categories.EditCategoryActivity" />
+        <activity android:name="com.app.nepshop.settings.categories.AddCategoryActivity" />
+        <activity android:name="com.app.nepshop.settings.categories.CategoriesActivity" />
+        <activity android:name="com.app.nepshop.expense.EditExpenseActivity" />
+        <activity android:name="com.app.nepshop.suppliers.EditSuppliersActivity" />
+        <activity android:name="com.app.nepshop.customers.EditCustomersActivity" />
+        <activity android:name="com.app.nepshop.product.EditProductScannerViewActivity" />
+        <activity android:name="com.app.nepshop.pdf_report.ViewPDFActivity" />
+        <activity android:name="com.app.nepshop.pos.ScannerActivity" />
+        <activity android:name="com.app.nepshop.product.ScannerViewActivity" />
+        <activity android:name="com.app.nepshop.product.EditProductActivity" />
+        <activity android:name="com.app.nepshop.settings.backup.BackupActivity" />
+        <activity android:name="com.app.nepshop.settings.shop.ShopInformationActivity" />
+        <activity android:name="com.app.nepshop.report.ExpenseGraphActivity" />
+        <activity android:name="com.app.nepshop.report.ExpenseReportActivity" />
+        <activity android:name="com.app.nepshop.expense.AddExpenseActivity" />
+        <activity android:name="com.app.nepshop.settings.SettingsActivity" />
+        <activity android:name="com.app.nepshop.expense.ExpenseActivity" />
+        <activity android:name="com.app.nepshop.report.GraphReportActivity" />
+        <activity android:name="com.app.nepshop.report.SalesReportActivity" />
+        <activity android:name="com.app.nepshop.report.ReportActivity" />
+        <activity android:name="com.app.nepshop.orders.OrderDetailsActivity" />
+        <activity android:name="com.app.nepshop.orders.OrdersActivity" />
+        <activity android:name="com.app.nepshop.pos.ProductCart" />
+        <activity android:name="com.app.nepshop.pos.PosActivity" />
+        <activity android:name="com.app.nepshop.product.AddProductActivity" />
+        <activity android:name="com.app.nepshop.product.ProductActivity" />
+        <activity android:name="com.app.nepshop.suppliers.AddSuppliersActivity" />
+        <activity android:name="com.app.nepshop.suppliers.SuppliersActivity" />
+        <activity android:name="com.app.nepshop.customers.AddCustomersActivity" />
+        <activity android:name="com.app.nepshop.customers.CustomersActivity" />
+        <activity android:name="com.app.nepshop.HomeActivity" />
+        <activity
+            android:name="com.app.nepshop.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" />
+        </provider> <!-- For Admob -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_application_id" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+
+    </application>
+
+</manifest>
